@@ -1,0 +1,44 @@
+package algorithms;
+
+public class optimized_bubble_sort {
+	
+	public void bubble_sort(int[] arr) {
+		int length = arr.length;
+		boolean swapped;
+		int temporary; 
+		
+		for(int i=0; i<length-1; i++) {
+			
+			swapped = false;
+			
+			for(int j=0; j<length-i-1; j++) {
+				if(arr[j] > arr[j+1]) {
+					
+					temporary = arr[j+1];
+					arr[j+1] = arr[j];
+					arr[j] = temporary ;
+					
+					swapped = true;
+				}
+			}
+			
+			if(!swapped) {
+				break;
+			}
+			
+		}
+	}
+
+	public static void main(String[] args) {
+		int[] arr = {6, 3, 1, 8, 11, 16, 23};
+		
+		bubbleSort newobj = new bubbleSort();
+		newobj.bubble_sort(arr);
+				
+		for(int i=0; i<arr.length; i++) {
+			System.out.print(arr[i] + ", ");
+		}
+
+	}
+
+}
