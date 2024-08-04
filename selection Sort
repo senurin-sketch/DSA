@@ -1,0 +1,39 @@
+package algorithms;
+
+public class SelectionSort {
+
+	public void selectionSort(int[] arr) {	
+		for(int i=0; i<arr.length-1; i++) {		
+			int minIdx = i;	
+			for(int j=i+1; j<arr.length; j++) {	
+				if(arr[j] < arr[minIdx]) {
+					minIdx = j;
+				}
+			}
+			int temp = arr[minIdx];
+			arr[minIdx] = arr[i];
+			arr[i] = temp;
+		}
+	}
+	
+	public static void main(String[] args) {
+		
+		int[] array = {6, 9, 2, 5, 1, 11, 18, 15, 3};
+		
+		System.out.print("Original array: ");
+		for(int i=0; i<array.length; i++) {
+			System.out.print(array[i] + ", ");
+		}
+		
+		SelectionSort newobj = new SelectionSort();
+		newobj.selectionSort(array);
+		
+		System.out.println();System.out.println();
+		System.out.print("Sorted array: ");
+		for(int i=0; i<array.length; i++) {
+			System.out.print(array[i] + ", ");
+		}
+
+	}
+
+}
